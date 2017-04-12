@@ -18,7 +18,7 @@ public class ClashPanel extends JPanel
 	private JButton tylersButton;
 	private JButton aricksButton;
 	
-	public ClashPanel(InheritController baseController)
+	public ClashPanel()
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
