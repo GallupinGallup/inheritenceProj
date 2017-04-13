@@ -13,19 +13,29 @@ public class ClashPanel extends JPanel
 {
 	private InheritController baseController;
 	private SpringLayout baseLayout;
-	private JButton jacobsButton;
-	private JButton issacsButton;
-	private JButton tylersButton;
-	private JButton aricksButton;
+	private JButton archerButton;
+	private JButton giantButton;
+	private JButton goblinBarrelButton;
+	private JButton miniDragonButton;
+	private JButton barbariansButton;
 	
 	public ClashPanel()
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
-		jacobsButton = new JButton("Jacob's button");
-		issacsButton = new JButton("Issac's button");
-		tylersButton = new JButton("Tyler's button");
-		aricksButton = new JButton("Arick's button");
+		archerButton = new JButton("Archer");
+		
+		
+		giantButton = new JButton("Giant");
+		
+		
+		goblinBarrelButton = new JButton("Goblin Barrel");
+		
+		
+		miniDragonButton = new JButton("Mini Dragon");
+		
+		barbariansButton = new JButton("Barbarians");
+		
 		
 		setupPanel();
 		setupLayout();
@@ -36,23 +46,25 @@ public class ClashPanel extends JPanel
 	{
 		this.setLayout(baseLayout);
 		this.setBackground(Color.GRAY);
-		this.add(jacobsButton);
-		this.add(issacsButton);
-		this.add(tylersButton);
-		this.add(aricksButton);
-		
+		this.add(archerButton);
+		this.add(giantButton);
+		this.add(goblinBarrelButton);
+		this.add(miniDragonButton);
+		this.add(barbariansButton);
 	}
 	
 	private void setupLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.WEST, jacobsButton, 10, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, jacobsButton, -10, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, issacsButton, 10, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.EAST, issacsButton, -10, SpringLayout.EAST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, tylersButton, 0, SpringLayout.NORTH, jacobsButton);
-		baseLayout.putConstraint(SpringLayout.EAST, tylersButton, 0, SpringLayout.EAST, issacsButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, aricksButton, 0, SpringLayout.NORTH, issacsButton);
-		baseLayout.putConstraint(SpringLayout.WEST, aricksButton, 0, SpringLayout.WEST, jacobsButton);
+		baseLayout.putConstraint(SpringLayout.WEST, archerButton, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, giantButton, 31, SpringLayout.SOUTH, archerButton);
+		baseLayout.putConstraint(SpringLayout.WEST, giantButton, 0, SpringLayout.WEST, archerButton);
+		baseLayout.putConstraint(SpringLayout.WEST, goblinBarrelButton, 10, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, goblinBarrelButton, -10, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, miniDragonButton, 29, SpringLayout.SOUTH, giantButton);
+		baseLayout.putConstraint(SpringLayout.WEST, miniDragonButton, 0, SpringLayout.WEST, archerButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, barbariansButton, -261, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, archerButton, 34, SpringLayout.SOUTH, barbariansButton);
+		baseLayout.putConstraint(SpringLayout.WEST, barbariansButton, 10, SpringLayout.WEST, this);
 	}
 	
 	private void setupListeners()
